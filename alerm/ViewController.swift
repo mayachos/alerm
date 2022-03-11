@@ -22,8 +22,8 @@ class ViewController: UIViewController {
         // DatePickerのstyleをホイールにする
         myDPvar.preferredDatePickerStyle = .wheels
         // 起動した時点の時刻をmyLabelに反映
-        myLabel.text = getNowTime()
-        setTimeLabel.text = getNowTime()
+        myLabel.text = "現在時刻: " + getNowTime()
+        setTimeLabel.text = "設定時刻: " + getNowTime()
         // 時間管理してくれる
         _ = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         // 現在時刻を取得
         let str = getNowTime()
         // myLabelに反映
-        myLabel.text = str
+        myLabel.text = "現在時刻: " + str
         // アラーム鳴らすか判断
         myAlarm(str: str)
     }
